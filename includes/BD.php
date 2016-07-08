@@ -51,8 +51,7 @@ class BD {
         $connection = mysqli_connect(self::HOSTNAME,self::USERNAME,self::PASSWORD,self::DATABASE);
 
         if(mysqli_connect_errno()){
-            echo $this->get_error(1,mysqli_connect_error(), __LINE__-3);
-            die;
+            die($this->get_error(1,mysqli_connect_error(), __LINE__-3));
         }
         else{
             $this->_connection = $connection;
